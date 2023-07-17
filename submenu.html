@@ -8,6 +8,8 @@
 		  content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"
 		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+	<script defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="stylesheet"
 		  href="css/main.css">
 	<title>Minimal Tool Site</title>
@@ -23,8 +25,9 @@
 				<li><a href="index.html">home</a></li>
 			</ul>
 		</nav>
-		<section>
-			<p>submenu page</p>
+		<section x-data="{showingMessage: true}">
+			<p @click="showingMessage = !showingMessage">toggle message</p>
+			<p x-show="showingMessage">submenu page</p>
 		</section>
 	</main>
 </body>

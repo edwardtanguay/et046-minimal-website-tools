@@ -5,8 +5,28 @@ nav {
 	margin-bottom: 2rem;
 }
 
-section {
-	p {
-		color: yellow;
+.mainIcon {
+	font-size: 15rem;
+	display: inline-block;
+
+	&:hover {
+		animation: rubberBand;
+		animation-duration: 1s;
+	}
+}
+
+.icon {
+	font-size: 5rem;
+	display: inline-block;
+	animation: rotateIt 3s infinite linear;
+}
+
+@keyframes rotateIt {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
 	}
 }

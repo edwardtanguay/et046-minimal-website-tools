@@ -10,13 +10,15 @@
 		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 	<link rel="stylesheet"
 		  href="css/main.css">
+	<script defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<title>Minimal Tool Site</title>
 </head>
 
-<body>
+<body x-data="{newColor: '', colors: ['red', 'blue', 'green']}">
 	<main class="container">
 		<nav>
-						<ul>
+			<ul>
 				<li<strong>search</strong></li>
 			</ul>
 			<ul>
@@ -25,6 +27,10 @@
 		</nav>
 		<section>
 			<p>search page</p>
+			<p>There are <span x-text="colors.length"></span> colors.</p>
+			<p>Current colors are: <span x-text="colors.join(', ')"></span></p>
+			<input x-model="newColor"/>
+			<button @click="colors.push(newColor); newColor = ''">add color</button>
 		</section>
 	</main>
 </body>
